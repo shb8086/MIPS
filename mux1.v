@@ -1,10 +1,18 @@
-module mux1(A,B,S1,C);
-parameter max=5;
-input [0:max-1]A;
-input [0:max-1]B;
-input S1;
-output [0:max-1]C;
+/**
+ * @file mux1.v
+ * @brief 5-to-1 Multiplexer module in Verilog.
+ * @author Shima Baniadamdizaj
+ * @email baniadam.shima@gmail.com
+ */
 
-assign C=S1?B:A;
+module mux1(
+  input [0:4] A, ///< 5-bit input A
+  input [0:4] B, ///< 5-bit input B
+  input S1,      ///< Select signal
+  output [0:4] C ///< 5-bit output
+);
+
+  // Assign statement for the multiplexer operation
+  assign C = S1 ? B : A;
 
 endmodule
